@@ -1,0 +1,23 @@
+name: ✅ Vérification JSON
+
+on:
+  push:
+    paths:
+      - 'citations.json'
+  pull_request:
+    paths:
+      - 'citations.json'
+
+jobs:
+  validate-json:
+    name: Valider le fichier JSON
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Cloner le repo
+        uses: actions/checkout@v3
+
+      - name: 🧪 Valider citations.json
+        run: |
+          echo "Vérification du fichier citations.json..."
+          python -m json.tool citations.json > /dev/null
