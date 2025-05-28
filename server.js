@@ -25,6 +25,21 @@ app.use(globalLimiter);
 
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+  const htmlPath = __dirname + "/public/index.html";
+  fs.readFile(htmlPath, "utf8", (err, html) => {
+    if (err) return res.status(500).send("Erreur serveur");
+
+    // ✅ Utiliser quotesByType directement
+    const types = Object.keys(quotesByType);
+    const scriptInjection = `<script>window.availableTypes = ${JSON.stringify(types)};</script>`;
+    const modifiedHtml = html.replace("</body>", `${scriptInjection}\n</body>`);
+
+    res.send(modifiedHtml);
+  });
+});
+
+
 app.get("/citation/random", (req, res) => {
   // Fusion de toutes les citations dans un seul tableau
   const allQuotes = Object.values(quotesByType).flat();
