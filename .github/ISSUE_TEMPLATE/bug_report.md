@@ -1,8 +1,10 @@
 ---
-name: 🐛 Bug report
+name: "\U0001F41B Bug report"
 about: Signaler un comportement inattendu ou une erreur
 title: "[BUG] "
-labels: [bug]
+labels: bug
+assignees: ''
+
 ---
 
 Merci de prendre un moment pour décrire le bug que vous avez rencontré. Plus vous êtes précis, plus il sera facile de le corriger.
