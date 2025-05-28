@@ -14,5 +14,17 @@
   {
     "auteur": "Voltaire",
     "citation": "La loi naturelle est l’instinct qui nous fait sentir la justice."
+  },
+  {
+    "auteur": "Voltaire",
+    "citation": "J’ai fait un peu de bien, c’est mon meilleur ouvrage."
+  },
+  {
+    "auteur": "Voltaire",
+    "citation" : "La grande affaire et la seule chose, c'est de vivre heureux."
+  },
+  {
+    "auteur" :"Albert Einstein",
+    "citation": "L'imagination est plus importante que le savoir."
   }
 ]
