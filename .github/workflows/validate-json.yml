@@ -29,4 +29,5 @@ jobs:
               echo "❌ Erreur dans $file"
               exit 1
             }
+
           done
