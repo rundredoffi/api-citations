@@ -32,7 +32,7 @@ Exemple :
 Merci de cocher ce que tu as vérifié :
 
 - [ ] Le code fonctionne localement
-- [ ] `citations.json` est toujours valide
+- [ ] Les fichiers JSON sont toujours valable
 - [ ] Aucun fichier inutile n’est ajouté (`node_modules`, `.env`, etc.)
 - [ ] J’ai mis à jour le README / l’index si besoin
 - [ ] Les tests (ou vérifications GitHub Actions) passent
