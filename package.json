@@ -20,6 +20,7 @@
   "homepage": "https://github.com/rundredoffi/api-citations#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0"
   }
 }
