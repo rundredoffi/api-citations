@@ -1,9 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const rateLimit = require('express-rate-limit');
-const fs = require('fs');
+const express = require("express");
+const cors = require("cors");
+const rateLimit = require("express-rate-limit");
+const loadAllQuotes = require("./utils/loadQuotes");
 
+const fs = require("fs");
 const app = express();
+const quotesByType = loadAllQuotes();
 app.use(cors());
 
 const PORT = process.env.PORT || 3000;
@@ -21,15 +23,37 @@ const globalLimiter = rateLimit({
 
 app.use(globalLimiter);
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.get('/citation/random', (req, res) => {
-  fs.readFile('citations.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).json({ error: 'Erreur serveur' });
-    const citations = JSON.parse(data);
-    const random = citations[Math.floor(Math.random() * citations.length)];
-    res.json(random);
-  });
+app.get("/citation/random", (req, res) => {
+  // Fusion de toutes les citations dans un seul tableau
+  const allQuotes = Object.values(quotesByType).flat();
+
+  if (!allQuotes.length) {
+    return res.status(404).json({ error: "Aucune citation disponible." });
+  }
+
+  // Sélection aléatoire
+  const types = Object.keys(quotesByType);
+  const allQuotesLabeled = types.flatMap((type) =>
+    quotesByType[type].map((q) => ({ ...q, type }))
+  );
+  const randomQuote = allQuotesLabeled[Math.floor(Math.random() * allQuotesLabeled.length)];
+  res.json(randomQuote);
+});
+
+app.get("/citation/:type", (req, res) => {
+  const type = req.params.type;
+  const quotes = quotesByType[type];
+
+  if (!quotes || quotes.length === 0) {
+    return res
+      .status(404)
+      .json({ error: `Aucune citation trouvée pour le type '${type}'.` });
+  }
+
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  res.json(randomQuote);
 });
 
 app.listen(PORT, () => console.log(`Serveur lancé sur le port ${PORT}`));
