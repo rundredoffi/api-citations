@@ -1,38 +1,34 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+name: 🐛 Bug report
+about: Signaler un comportement inattendu ou une erreur
+title: "[BUG] "
+labels: [bug]
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+Merci de prendre un moment pour décrire le bug que vous avez rencontré. Plus vous êtes précis, plus il sera facile de le corriger.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## 📝 Description du bug
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+Décrivez clairement ce qu’il se passe, et ce que vous attendiez à la place.  
+Exemple :  
+> Quand j’appelle `/citation/random`, je reçois un objet vide...
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## 🔁 Étapes pour reproduire
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+Quelles sont les étapes pour reproduire le bug ?  
+Exemple :
+1. Aller sur https://api-citations.onrender.com/citation/random
+2. Observer la réponse
+3. Voir l'erreur
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## 🧭 Navigateur ou outil utilisé (optionnel)
 
-**Additional context**
-Add any other context about the problem here.
+Indiquez le contexte si cela dépend de l’environnement.  
+Exemple : Firefox 126, Postman, `fetch` en Node.js…
+
+## 🖼️ Logs ou capture d’écran
+
+Ajoutez ici tout message d’erreur ou capture d’écran utile.  
+Exemples :
+- `"Uncaught TypeError: ..."`
+- Capture d'écran de la console ou du terminal
