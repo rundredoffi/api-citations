@@ -1,0 +1,35 @@
+name: 💡 Proposition d'amélioration
+description: Suggérer une idée ou une amélioration
+title: "[SUGGESTION] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre un moment pour détailler votre suggestion. On adore les idées utiles ou créatives 🤝
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Contexte ou problème
+      description: Pourquoi cette amélioration serait utile ?
+      placeholder: "Je souhaite intégrer cette API dans un projet, mais j’aimerais pouvoir filtrer par auteur..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Solution proposée
+      description: Décrivez clairement l’idée, ou comment cela pourrait être intégré à l’API.
+      placeholder: "Ajouter un paramètre GET ?auteur=..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: willing_to_contribute
+    attributes:
+      label: Souhaitez-vous contribuer à cette amélioration ?
+      options:
+        - Oui, je peux proposer un PR
+        - Pas moi, mais j’aimerais que ce soit ajouté

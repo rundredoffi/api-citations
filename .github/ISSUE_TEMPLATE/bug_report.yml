@@ -1,0 +1,43 @@
+name: 🐛 Bug report
+description: Signaler un comportement inattendu ou une erreur
+title: "[BUG] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre un moment pour décrire le bug que vous avez rencontré. Plus vous êtes précis, plus il sera facile de le corriger.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du bug
+      description: Décrivez clairement ce qu’il se passe, et ce que vous attendiez à la place.
+      placeholder: "Quand j’appelle /citation/random, je reçois un objet vide..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Étapes pour reproduire
+      description: Quelles sont les étapes pour reproduire le bug ?
+      placeholder: |
+        1. Aller sur https://api-citations.onrender.com/citation/random
+        2. ...
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Navigateur ou outil utilisé
+      description: Optionnel — indiquez si cela dépend du contexte (fetch en JS, cURL, navigateur...)
+      placeholder: ex : Firefox 126, Postman, Node fetch...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou capture d’écran
+      description: Coller un message d’erreur ou ajouter une capture d’écran si pertinent.
+      placeholder: ex : "Uncaught TypeError..."

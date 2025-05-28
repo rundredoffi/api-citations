@@ -1,0 +1,26 @@
+name: 📝 Ajouter une citation
+description: Proposer une nouvelle citation à ajouter à la base
+title: "[CITATION] "
+labels: [citation]
+body:
+  - type: input
+    id: texte
+    attributes:
+      label: Texte de la citation
+      placeholder: "La vie est un mystère qu’il faut vivre, et non un problème à résoudre."
+    validations:
+      required: true
+
+  - type: input
+    id: auteur
+    attributes:
+      label: Auteur (si connu)
+      placeholder: "Gandhi, Anonyme, Confucius..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source ou contexte (facultatif)
+      placeholder: ex : "Discours de 1946, Livre X, etc."
