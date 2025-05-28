@@ -6,21 +6,27 @@ permissions:
 on:
   push:
     paths:
-      - 'citations.json'
+      - 'data/**/*.json'
   pull_request:
     paths:
-      - 'citations.json'
+      - 'data/**/*.json'
 
 jobs:
   validate-json:
-    name: Valider le fichier JSON
+    name: Valider tous les fichiers JSON dans /data
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
 
-      - name: 🧪 Valider citations.json
+      - name: 🧪 Valider tous les fichiers JSON dans /data
         run: |
-          echo "Vérification du fichier citations.json..."
-          python -m json.tool citations.json > /dev/null
+          echo "🔍 Vérification des fichiers JSON dans /data..."
+          for file in data/*.json; do
+            echo "✅ Vérification de $file..."
+            python -m json.tool "$file" > /dev/null || {
+              echo "❌ Erreur dans $file"
+              exit 1
+            }
+          done
