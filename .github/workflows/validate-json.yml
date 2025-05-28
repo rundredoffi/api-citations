@@ -1,5 +1,8 @@
 name: ✅ Vérification JSON
 
+permissions:
+  contents: read
+
 on:
   push:
     paths:
