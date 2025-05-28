@@ -1,0 +1,14 @@
+# node_modules : dépendances installées localement
+node_modules/
+
+# Logs & erreurs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Variables d'environnement (si tu en ajoutes plus tard)
+.env
