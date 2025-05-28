@@ -7,6 +7,8 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
 app.get('/citation/random', (req, res) => {
   fs.readFile('citations.json', 'utf8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Erreur serveur' });
